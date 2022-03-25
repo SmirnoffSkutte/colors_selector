@@ -23,7 +23,10 @@ function App() {
       let styleSheet = document.styleSheets[j];
       for (let k = 0; k < styleSheet.cssRules.length; ++k) {
         let rule = styleSheet.cssRules[k];
-        if (rule.style && color == rule.style.color) {
+        if (rule.style && color === rule.style.color) {
+          rules[color].push(rule.selectorText);
+        }
+        if (rule.style && color === rule.style.backgroundColor) {
           rules[color].push(rule.selectorText);
         }
       }
